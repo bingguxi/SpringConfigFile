@@ -1,0 +1,67 @@
+server:
+  port: 11000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    beans:
+      enabled: true
+    info:
+      enabled: true
+  server:
+    address: localhost
+    port: 12101
+
+
+spring:
+  mail:
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.naver.com
+            enable: 'true'
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    username: ''
+    port: '465'
+    default-encoding: UTF-8
+    host: smtp.naver.com
+    password: ''
+  thymeleaf:
+    cache: 'false'
+    prefix: classpath:/templates/
+    check-template-location: 'true'
+    suffix: .html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: test123!@#
+    username: poly
+    url: jdbc:mysql://localhost:20300/myDB
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: kopo.poly.dto
+  configuration:
+    map-underscore-to-camel-case: 'true'
+
+cctv:
+  api:
+    key: 5592d8862e5446ebbf60f7fb03b2e1ac
+naver:
+  client_secret: 5YEbhqWvUK
+  client_id: EjjCKVYZ02W5tA0_JBpE
+  redirect_uri: http://localhost:11000/auth/naver/callback
+bhg:
+  api:
+    key: tfzAvw3TQ6a8wL8N0-OmBw
+
+
+poly: 'BigData Dev!'
